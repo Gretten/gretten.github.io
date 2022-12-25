@@ -10,6 +10,9 @@
       #cont {
         display: none;
       }
+      #result {
+        word-break: break-all;
+      }
     </style>
 </head>
 <body>
@@ -32,10 +35,9 @@
 
             e.preventDefault();
             const resultTransformed = input.value;
-            const res = letsFindNonSimples(+resultTransformed);
+            const res = letsFindNonSimples(+resultTransformed).join(', ');
             resultDiv.innerHTML = res;
             resultCont.style.display = "block";
-            console.log('');
         })
 
     </script>

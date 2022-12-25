@@ -36,6 +36,7 @@
             e.preventDefault();
             const resultTransformed = input.value;
             const res = findSimpleNumbersInRange(+resultTransformed);
+            console.log(res);
             if(res && Array.isArray(res)) {
                 resultDiv.innerHTML = res.join(', ');;
                 resultCont.style.display = "block";

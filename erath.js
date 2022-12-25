@@ -1,4 +1,4 @@
-const letsFindNonSimples = (range) => {
+const findSimpleNumbersInRange = (range) => {
     if(typeof range !== 'number') {
         return new Error('Тип аргумента range должен быть number');
     }

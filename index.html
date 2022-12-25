@@ -35,7 +35,7 @@
 
             e.preventDefault();
             const resultTransformed = input.value;
-            const res = letsFindNonSimples(+resultTransformed).join(', ');
+            const res = findSimpleNumbersInRange(+resultTransformed).join(', ');
             resultDiv.innerHTML = res;
             resultCont.style.display = "block";
         })

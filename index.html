@@ -35,9 +35,11 @@
 
             e.preventDefault();
             const resultTransformed = input.value;
-            const res = findSimpleNumbersInRange(+resultTransformed).join(', ');
-            resultDiv.innerHTML = res;
-            resultCont.style.display = "block";
+            const res = findSimpleNumbersInRange(+resultTransformed);
+            if(res && Array.isArray(res)) {
+                resultDiv.innerHTML = res.join(', ');;
+                resultCont.style.display = "block";
+            }
         })
 
     </script>

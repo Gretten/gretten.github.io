@@ -6,18 +6,18 @@ const findSimpleNumbersInRange = (range) => {
         return new Error('Диапазон не может быть меньше 2');
     }
 
-    const map = new Map();
-    const result = [];
+    const complexNumbers = new Map();
+    const simpleNumbers = [];
 
     for(let i = 2; i <= range; i++) {
         for(j = i + 1; j <= range; j++) {
-            if(!map.get(j) && !(j % i)) {
-                map.set(j, j)
+            if(!complexNumbers.get(j) && !(j % i)) {
+                complexNumbers.set(j, j)
             } 
         }
-        if(!map.get(i)) {
-            result.push(i);
+        if(!complexNumbers.get(i)) {
+            simpleNumbers.push(i);
         }
     }
-    return result;
+    return simpleNumbers;
 }

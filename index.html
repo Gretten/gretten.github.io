@@ -23,12 +23,36 @@
     <div id="result"></div>
   </div>
       <script>
-        const input = document.querySelector('input');    
+        const letsFindNonSimples = (range) => {
+            if(typeof range !== 'number') {
+                return new Error('Тип аргумента range должен быть number');
+            }
+            if(range < 2) {
+                return new Error('Диапазон не может быть меньше 2');
+            }
+
+            const map = new Map();
+            const result = [];
+
+            for(let i = 2; i <= range; i++) {
+                for(j = i + 1; j <= range; j++) {
+                    if(!map.get(j) && !(j % i)) {
+                        map.set(j, j)
+                    } 
+                }
+                if(!map.get(i)) {
+                    result.push(i)
+                }
+            }
+            return result;
+        }
         const button = document.querySelector('button');  
         const resultCont = document.querySelector('#cont');
-        const resultDiv = document.querySelector('#result');
+        const resultDiv = document.querySelector('#result')
 
         button.addEventListener('click', (e) => {
+            const input = document.querySelector('input');    
+
             e.preventDefault();
             const resultTransformed = input.value;
             const res = letsFindNonSimples(+resultTransformed);

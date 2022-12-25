@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="./erath.js"></script>
+    <style>
+      #cont {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+  <div>До какого числа N искать простые числа?</div>
+  <input type="text" id="inputNumber"/>
+  <br/>
+  <button>Посчитать!</button>
+  <div id="cont">
+    <img src="https://www.clipartmax.com/png/small/224-2245026_lion-cartoon-clip-art-cute-lion-png.png" height="100"/>
+    <div>Молодец! Вот какие простые числа есть от 0 до твоего числа:</div>
+    <div id="result"></div>
+  </div>
+      <script>
+        const input = document.querySelector('input');    
+        const button = document.querySelector('button');  
+        const resultCont = document.querySelector('#cont');
+        const resultDiv = document.querySelector('#result');
+
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const resultTransformed = input.value;
+            const res = letsFindNonSimples(+resultTransformed);
+            resultDiv.innerHTML = resultTransformed;
+            resultCont.style.display = "block";
+        })
+
+    </script>
+</body>
+</html>
